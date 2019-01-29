@@ -1,7 +1,7 @@
 /*
  * Created By Safe_IT23
  */
-package Example1Deck;
+package Example2LinkedList;
 
 /**
  *
