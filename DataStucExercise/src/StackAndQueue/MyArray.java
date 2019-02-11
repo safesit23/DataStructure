@@ -8,11 +8,11 @@ package StackAndQueue;
  * @author jatawatsafe
  */
 public class MyArray<E> implements QueueInterface<E>,StackInterface<E>{
-    private E [] data;
-    private int size;
+    //attribute to save data
+    //attribute to save size
     
     public MyArray(int arraySize){
-        data = (E[]) new Object[arraySize];
+        //สร้าง Array
     }
     
     @Override
@@ -27,12 +27,12 @@ public class MyArray<E> implements QueueInterface<E>,StackInterface<E>{
 
     @Override
     public int size() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //Return Size of Data in Array
     }
 
     @Override
     public boolean isEmpty() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // Check that has data in array or not
     }
 
     @Override
