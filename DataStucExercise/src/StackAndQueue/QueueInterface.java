@@ -7,11 +7,10 @@ package StackAndQueue;
  *
  * @author jatawatsafe
  */
-public interface QueueInterface {
-    public void enqueue(Object o);
-    public Object dequeue();
+public interface QueueInterface <E> {
+    public void enqueue(E e);
+    public E dequeue();
     public int size();
     public boolean isEmpty();
-    
     
 }

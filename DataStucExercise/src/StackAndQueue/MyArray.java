@@ -3,48 +3,120 @@
  */
 package StackAndQueue;
 
+import java.util.NoSuchElementException;
+
 /**
  *
  * @author jatawatsafe
  */
 public class MyArray<E> implements QueueInterface<E>,StackInterface<E>{
-    //attribute to save data
-    //attribute to save size
+    private E [] data;
+    private int size;
+    
+    public MyArray(){
+        data = (E[]) new Object[10];
+    }
     
     public MyArray(int arraySize){
-        //สร้าง Array
+        data = (E[]) new Object[arraySize];
     }
     
     @Override
     public void enqueue(E e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(size==data.length){
+            E[] newData = (E[]) new Object[size*4/3];
+            for(int i=0;i<size;i++){
+                newData[i] = data[i];
+            }
+            
+            data = newData;
+        }
+        data[size] = e;
+        size++;
     }
 
     @Override
     public E dequeue() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(size!=0){
+            E firstQueue = data[0];
+            for(int i=0;i<size-1;i++){
+                data[i] = data[i+1];
+            }
+            data[size-1]=null;
+            size--;
+            return firstQueue;
+        }else{
+            throw new NoSuchElementException("NoSuchElement");
+        }
     }
 
     @Override
     public int size() {
-        //Return Size of Data in Array
+        return size;
     }
 
     @Override
     public boolean isEmpty() {
-        // Check that has data in array or not
+        if(size==0){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     @Override
     public void push(E e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(size==data.length){
+            E[] newData = (E[]) new Object[size*4/3];
+            for(int i=0;i<size;i++){
+                newData[i] = data[i];
+            }
+            data = newData;
+        }
+        data[size] = e;
+        size++;
     }
 
     @Override
     public E pop() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(size!=0){
+            E lastData = data[size-1];
+            data[size-1] = null;
+            size--;
+            return lastData;
+        }else{
+            throw new NoSuchElementException("NoSuchElement");
+        }
+    }
+
+    public E peek() {
+        if(size!=0){
+            return data[size-1];        
+        }else{
+            throw new NoSuchElementException("NoSuchElement");
+        }
+    }
+
+    public E getFront() {
+        if(size!=0){
+            return data[0];      
+        }else{
+            throw new NoSuchElementException("NoSuchElement");
+        }
     }
     
+    //check Data
+    public String allData(){
+        String allData = "";
+        if(size!=0){
+            for(int i=0;i<size;i++){
+                allData = allData + data[i]+" ";
+            }
+        }else{
+            allData = null;
+        }
+        return allData;
+    }
     
     
 }

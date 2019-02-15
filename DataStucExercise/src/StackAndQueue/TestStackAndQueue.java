@@ -7,19 +7,25 @@ package StackAndQueue;
  *
  * @author jatawatsafe
  */
-public class TestMyArray {
+public class TestStackAndQueue {
     public static void main(String[] args) {
+        //Creation by Array
+        MyArray<String> array1 = new MyArray(5);
+        MyArray<Integer> array2 = new MyArray(5);
+        //Creation by LinkList
+        MyLinkedList<Integer> linkedlist1 = new MyLinkedList();
+        
         //Generic use String
-        testArray1();
+        testString(array1);
         //Generic use Integer
-        testArray2();
+        testInteger(array2);
+        //Use Linked List
+        testLinkList(linkedlist1);
        
     }
     
-    public static void testArray1(){
+    public static void testString(MyArray<String> array1){
         System.out.println("<<<<<< MY ARRAY1 >>>>>");
-        //create
-        MyArray<String> array1 = new MyArray(5);
         System.out.println("Size is "+array1.size());
         System.out.println("Is Empty : "+array1.isEmpty());
         System.out.println("Data is "+array1.allData()+"\n");
@@ -86,10 +92,8 @@ public class TestMyArray {
         System.out.println("PEEK is "+array1.peek()+"\nFront is "+array1.getFront()+"\n");
     }
     
-    public static void testArray2(){
+    public static void testInteger(MyArray<Integer> array2){
         System.out.println("<<<<<< MY ARRAY2 >>>>>");
-        //create
-        MyArray<Integer> array2 = new MyArray(5);
         System.out.println("Size is "+array2.size());
         System.out.println("Is Empty : "+array2.isEmpty());
         System.out.println("Data is "+array2.allData()+"\n");
@@ -120,5 +124,39 @@ public class TestMyArray {
         System.out.println("Is Empty : "+array2.isEmpty());
         System.out.println("Data is "+array2.allData());
         System.out.println("PEEK is "+array2.peek()+"\nFront is "+array2.getFront()+"\n");
+    }
+    
+    public static void testLinkList(MyLinkedList<Integer> linkedList){
+        System.out.println("<<<<<< LINK LIST >>>>>");
+        System.out.println("Size is "+linkedList.size());
+        System.out.println("Is Empty : "+linkedList.isEmpty());
+        System.out.println("Data is "+linkedList.allData()+"\n");
+        
+        //Push Data
+        System.out.println(">>1.Push 1");
+        linkedList.push(1);
+        System.out.printf("Data is %s \t\t | Size is %d \n\n",linkedList.allData(),linkedList.size() );
+        //Push Data
+        System.out.println(">>2.Push 9");
+        linkedList.push(9);
+        System.out.printf("Data is %s \t\t | Size is %d \n\n",linkedList.allData(),linkedList.size() );
+        //Pop Data
+        System.out.println(">>3.Pop");
+        System.out.println("Pop--> "+linkedList.pop());
+        System.out.printf("Data is %s \t\t | Size is %d \n\n",linkedList.allData(),linkedList.size() );
+        //Enqueue Data
+        System.out.println(">>4.Enqueue 3");
+        linkedList.enqueue(3);
+        System.out.printf("Data is %s \t\t | Size is %d \n\n",linkedList.allData(),linkedList.size() );
+        //Dequeue Data
+        System.out.println(">>5.Dequeue");
+        System.out.println("Dequeue--> "+linkedList.dequeue());
+        System.out.printf("Data is %s \t\t | Size is %d \n\n",linkedList.allData(),linkedList.size() );
+        //CONCLUSION
+        System.out.println("------CONCLUSION-----");
+        System.out.println("Size is "+linkedList.size());
+        System.out.println("Is Empty : "+linkedList.isEmpty());
+        System.out.println("Data is "+linkedList.allData());
+        System.out.println("PEEK is "+linkedList.peek()+"\nFront is "+linkedList.getFront()+"\n");
     }
 }

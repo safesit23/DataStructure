@@ -7,9 +7,9 @@ package StackAndQueue;
  *
  * @author jatawatsafe
  */
-public interface StackInterface {
-    public void push(Object o);
-    public Object pop();
+public interface StackInterface <E> {
+    public void push(E e);
+    public E pop();
     public int size();
     public boolean isEmpty();
     
