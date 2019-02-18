@@ -31,16 +31,17 @@ public class BalancedSymbolChecker {
                     }else{
                         int value = getValue(token);
                         System.out.printf("\t\t Check %d == %d -->",value,stack.peek());
-                        if(stack.peek()==value){
-                            if(stack.isEmpty()){
-                                System.out.printf("False \nMissing\n");
-                            }else{
+                        if(!stack.isEmpty()){
+                            if(stack.peek()==value){
                                 System.out.printf("TRUE \t POP : %s %s \n",getMissingSymbol(value),getSymbol(value));
                                 stack.pop();
+                            }else{
+                                System.out.printf("False \nNot Match\n");
+                                break;
                             }
                         }else{
                             System.out.printf("FALSE \nMissing Open Symbol\n");
-                            return "NOT BALANCE";
+                            break;
                         }
                     }
                 }
