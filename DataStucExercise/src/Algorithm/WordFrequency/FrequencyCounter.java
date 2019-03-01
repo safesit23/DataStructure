@@ -29,9 +29,9 @@ public class FrequencyCounter {
         String line;
         while(sc.hasNextLine()){
             line = sc.nextLine();
-            StringTokenizer stk = new StringTokenizer(line, ".:,;()*-",false);  // default false ->เพื่อบอกว่าไม่เอา
+            StringTokenizer stk = new StringTokenizer(line, ".:,;()*-/\\1234567890 ",false);  // default false ->เพื่อบอกว่าไม่เอา
             while(stk.hasMoreElements()){
-                String word = stk.nextToken();
+                String word = stk.nextToken().toLowerCase();
                 //if not has this word
                 if(frequency.get(word)==null){
                     frequency.put(word, new WordFrequency(word));
