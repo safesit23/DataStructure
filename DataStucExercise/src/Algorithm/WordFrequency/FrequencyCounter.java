@@ -48,6 +48,7 @@ public class FrequencyCounter {
         frequency.clear();
     }
     
+    @Override
     public String toString(){
         //ต่อ String
         StringBuilder stb = new StringBuilder(frequency.size()*20);
@@ -59,7 +60,7 @@ public class FrequencyCounter {
         for (WordFrequency word : words) {
             //loop to
             //%-15s = 15 ตัวอักษร
-            stb.append(String.format("%-15s : %3d", word.getWord(),word.getCount()));
+            stb.append(String.format("%-15s : %3d\n", word.getWord(),word.getCount()));
         }
         return stb.toString();
     }
