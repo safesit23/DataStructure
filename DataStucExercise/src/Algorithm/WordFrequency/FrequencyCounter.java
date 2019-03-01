@@ -54,8 +54,11 @@ public class FrequencyCounter {
         StringBuilder stb = new StringBuilder(frequency.size()*20);
         //เอาคำทั้งหมดออกมา
         List<WordFrequency> words = new ArrayList(frequency.values()); //value is method in collection
-        //
-        Collections.sort(words);
+        //sort ด้วย comparable !! ให้ implements เพิ่ม
+        //Collections.sort(words);
+        //Sort with Descending / sort is method of Collections if have param will use comparator
+        Collections.sort(words, WordFrequency.freqDescending);
+        
         //ต่อ String
         for (WordFrequency word : words) {
             //loop to
@@ -63,6 +66,10 @@ public class FrequencyCounter {
             stb.append(String.format("%-15s : %3d\n", word.getWord(),word.getCount()));
         }
         return stb.toString();
+    }
+    
+    public List<WordFrequency> getResult(){
+        return new ArrayList(frequency.values());
     }
     
 }
