@@ -50,7 +50,7 @@ public class FrequencyCounter {
     
     @Override
     public String toString(){
-        //ต่อ String
+        //ต่อ String ระบุ capacity
         StringBuilder stb = new StringBuilder(frequency.size()*20);
         //เอาคำทั้งหมดออกมา
         List<WordFrequency> words = new ArrayList(frequency.values()); //value is method in collection
