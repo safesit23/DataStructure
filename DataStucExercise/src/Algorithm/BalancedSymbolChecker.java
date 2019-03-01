@@ -118,7 +118,7 @@ public class BalancedSymbolChecker {
     
     public static void main(String[] args) throws FileNotFoundException {
         //String message = checkBalance("/Users/jatawatsafe/NetBeansProjects1/DataStructure/DataStucExercise/src/Algorithm/BalancedSymbolChecker.java");
-        String message = checkBalance("TestSymbolChecker.txt");
+        String message = checkBalance("/Users/jatawatsafe/NetBeansProjects1/DataStructure/DataStucExercise/src/Algorithm/TestSymbolChecker.txt");
         System.out.println("\n"+message);
     }
 }
