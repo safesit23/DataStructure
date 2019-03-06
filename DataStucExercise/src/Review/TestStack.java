@@ -14,6 +14,10 @@ import java.util.Map;
  * @author jatawatsafe
  */
 public class TestStack {
+    public static void main(String[] args) {
+        testHash();
+    }
+    
     public static void testList(){
         //1 ArrayList
         List list = new ArrayList();
@@ -31,6 +35,9 @@ public class TestStack {
         warehouse.put(1, "AAAA");
         warehouse.put(2, "BBB");
         warehouse.put(3, "CCCC");
-//         = warehouse.values();
+        List<String> all = new LinkedList(warehouse.values());
+        for (String element : all) {
+            System.out.println(element);
+        }
     }
 }
