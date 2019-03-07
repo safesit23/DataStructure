@@ -17,7 +17,7 @@ public class WordFrequency implements Comparable<WordFrequency>{
         //Descending order
         @Override
         public int compare(WordFrequency o1, WordFrequency o2) {
-            return o2.count = o1.count;
+            return o2.count - o1.count;
         }
         
     }
