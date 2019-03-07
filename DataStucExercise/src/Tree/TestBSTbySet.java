@@ -13,21 +13,31 @@ import java.util.TreeSet;
  */
 public class TestBSTbySet {
     public static void main(String[] args) {
-        Set<Student> x = new TreeSet();
+        Set<Student> x = new TreeSet(new StudentComparator());
         x.add(new Student(1, "A"));
         x.add(new Student(2, "B"));
-        x.add(new Student(3, "C"));
+        x.add(new Student(3, "Z"));
         x.add(new Student(4, "D"));
         x.add(new Student(5, "E"));
-        x.add(new Student(5, "F"));
+        x.add(new Student(6, "F"));
         //Display
         System.out.println(x);
-        Student std1 = new Student(3, "xxxx");
+        Student std1 = new Student(3, "C");
         System.out.printf("Has 3 : %b\n",x.contains(std1));
+        
     }
 }
 
-class Student implements Comparable<Student>, Comparator<Student>{
+class StudentComparator implements Comparator<Student>{
+
+    @Override
+    public int compare(Student s1, Student s2) {
+        return s1.getName().compareTo(s2.getName());
+    }
+    
+}
+
+class Student implements Comparable<Student>{
     private int id;
     private String name;
 
@@ -61,11 +71,6 @@ class Student implements Comparable<Student>, Comparator<Student>{
     public int compareTo(Student student) {
         //Use - because if use = it will replace the id
         return this.id - student.getId();
-    }
-
-    @Override
-    public int compare(Student s1, Student s2) {
-        return s1.getName().compareTo(s2.getName());
     }
     
     
