@@ -6,6 +6,7 @@ package Practice1;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -48,8 +49,9 @@ public class Frequency {
     public String toString(){
         StringBuilder sb = new StringBuilder();
         List<Word> list = new ArrayList(counter.values());
+        Collections.sort(list);
         for (Word word : list) {
-            sb.append(String.format("%-15s : %d", word.getWord(),word.getCount()));
+            sb.append(String.format("%-15s : %d\n", word.getWord(),word.getCount()));
         }
         return sb.toString();
     }
