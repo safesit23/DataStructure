@@ -25,8 +25,11 @@ public class FindMode {
         }
         //get list from map.values
         LinkedList<Number> list = new LinkedList(collectData.values());
+        //Sort by Number fisrt
+        Collections.sort(list);
         //Sort by Frequency
         Collections.sort(list, Number.compareFrequency);
+        System.out.println(list);
         //Last of list is most frequency
         Number topMostNumber = list.getLast();
         return topMostNumber.toString();
