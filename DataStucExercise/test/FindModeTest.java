@@ -40,7 +40,7 @@ public class FindModeTest {
     @Test
     public void test4() {
         int[] numbers = {29,34,53,74,85,96,36,25,45,67};
-        String expectResult = "45 (1) : [8]";
+        String expectResult = "96 (1) : [5]";
         String result = FindMode.findMode(numbers);
         assertEquals(expectResult, result);
     }
