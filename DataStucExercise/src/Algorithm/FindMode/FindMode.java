@@ -29,7 +29,7 @@ public class FindMode {
         Collections.sort(list);
         //Sort by Frequency
         Collections.sort(list, Number.compareFrequency);
-        System.out.println(list);
+        //System.out.println(list);
         //Last of list is most frequency
         Number topMostNumber = list.getLast();
         return topMostNumber.toString();
