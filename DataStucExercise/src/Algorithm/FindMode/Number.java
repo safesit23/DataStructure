@@ -61,7 +61,7 @@ public class Number implements Comparable<Number>{
         this.indexPosition = indexPosition;
     }
     
-    
+
 
     @Override
     public String toString() {
