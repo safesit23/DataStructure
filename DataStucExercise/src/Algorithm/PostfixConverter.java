@@ -12,58 +12,47 @@ import java.util.Scanner;
  */
 public class PostfixConverter {
     public static String postfixConverter(String eq){
+        StringBuilder result = new StringBuilder(128);
         LinkedList<String> stack = new LinkedList();
-        String postfix = "";
-        String c;
-        for(int i=0;i<eq.length();i++){
-            c = ""+eq.charAt(i);
-            //check Is it operator ?
-            if(isOperator(c)){
-                //If empty, It can push
-                if(stack.isEmpty()){
-                    stack.push(c);
-                }else{  //If not empty, we need to check value
-                    while(checkValues(c) <= checkValues(stack.peek())){
-                        if(!stack.isEmpty()){
-                            postfix = postfix + stack.pop();
-                        }else{
-                            break;
-                        }
-                    }
-                    stack.push(c);
-                }
-            }else{ //is Operand
-                postfix = postfix + c;
-            }
-        }
+        
+        
         while(!stack.isEmpty()){
-            postfix = postfix + stack.pop();
+            result.append(" ");
+            result.append(stack.pop());
         }
-        return postfix;
+        return result.toString().trim();
     }
     
-    public static boolean isOperator(String t){
-        switch(t){
-            case "+" :  
-            case "-" :  
-            case "*" :
-            case "/" : return true;
+    public static boolean isOperator(String operator) {
+        switch (operator) {
+            case "(":
+            case ")":
+            case "+":
+            case "-":
+            case "*":
+            case "/":
+            case "%":
+                return true;
         }
         return false;
     }
     
-    public static int checkValues(String t){
-        if(t!=null){
-            switch(t){
-                case "+" :  
-                case "-" :  return 1;
-                case "*" :
-                case "/" :  return 2;
-            }
-        }else{
-            return -1;
+    public static int precedenceLevel(String operator) {
+        switch (operator) {
+            case "(":
+            case ")":
+                return 0;
+
+            case "+":
+            case "-":
+                return 1;
+
+            case "*":
+            case "/":
+            case "%":
+                return 2;
         }
-        return -1;
+        throw new RuntimeException("Invalid operator");
     }
     
     public static void main(String[] args) {
