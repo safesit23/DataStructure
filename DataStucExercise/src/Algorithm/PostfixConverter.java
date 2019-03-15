@@ -16,8 +16,17 @@ public class PostfixConverter {
         StringBuilder result = new StringBuilder(128);
         LinkedList<String> stack = new LinkedList();
         StringTokenizer stk = new StringTokenizer(exp," +-*/%()",true);
+        String token;
         while (stk.hasMoreElements()) {
-            
+            token = stk.nextToken();
+            if (token.equals(" ")) {
+                continue;
+            }
+            if(isOperator(token)){
+                System.out.printf("%s is Operator\n",token);
+            }else{
+                System.out.printf("%s is Operand\n",token);
+            }
             
         }
         
