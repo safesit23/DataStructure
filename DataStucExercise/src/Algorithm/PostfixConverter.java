@@ -5,15 +5,23 @@ package Algorithm;
 
 import java.util.LinkedList;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 /**
  *
  * @author jatawatsafe
  */
 public class PostfixConverter {
-    public static String postfixConverter(String eq){
+    public static String postfixConverter(String exp){
         StringBuilder result = new StringBuilder(128);
         LinkedList<String> stack = new LinkedList();
+        StringTokenizer stk = new StringTokenizer(exp," +-*/%()",true);
+        while (stk.hasMoreElements()) {
+            
+            
+        }
+        
+        
         
         
         while(!stack.isEmpty()){
