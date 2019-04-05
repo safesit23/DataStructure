@@ -35,7 +35,7 @@ public class BinarySearchByRecursion {
             return -1;
         }
         int mid = (left + right) / 2;
-        Comparable k = (Comparable) key;
+        Comparable k = (Comparable) key;     //Object implement Comparable.If can casting it has method compareTo , but if not will throw exception.
         Comparable x = (Comparable) data[mid];
         
         if (k.compareTo(x) < 0) {
