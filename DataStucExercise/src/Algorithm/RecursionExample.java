@@ -9,7 +9,7 @@ package Algorithm;
  *
  * @author jatawatsafe
  */
-public class SumByRecursion {
+public class RecursionExample {
     public static void main(String[] args) {
         int x=5;
         System.out.printf("S(%d) = %d\n",x,sum(x));
