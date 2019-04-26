@@ -15,7 +15,7 @@ import java.util.Random;
  */
 public class Tester {
     public static void main(String[] args) {
-        test2();
+        test1();
     }
     
     public static void printArray(Object[] x) {

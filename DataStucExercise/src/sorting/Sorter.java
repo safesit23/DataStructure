@@ -31,17 +31,17 @@ public class Sorter {
         for (int i = 1; i < data.length; i++) {
             Comparable tmp = (Comparable) data[i];
             int j = i;
-            System.out.println(i + ".)" + display(data));
-            message(data[i], data[j - 1]); //display process
+            System.out.println(i + ".)" + display(data,i));
+            message(tmp, data[j-1]); //display process
             for (; j > 0 && tmp.compareTo((Comparable) data[j - 1]) < 0; j--) { //when temp is more than will break loop
                 System.out.println("      MOVE");
                 data[j] = data[j - 1];
-                System.out.println("      Data: " + display(data));
-                message(data[i], data[j - 1]); //display process
+                System.out.println("      Data: " + display(data,j));
+                message(tmp, data[j - 2]); //display process
             }
             System.out.println("      STOP");
             data[j] = tmp;
-            System.out.println("--->>AfterReplace: " + display(data) + "\n");
+            System.out.println("      Replace "+tmp+"  : " + display(data,j) + "\n");
         }
     }
 
@@ -78,10 +78,14 @@ public class Sorter {
     }
     
 
-    public static String display(Object[] data) {
+    public static String display(Object[] data,int pos) {
         String display = "";
-        for (Object i : data) {
-            display = display + i + " ";
+        for (int i = 0; i < data.length; i++) {
+            if(i==pos){
+                display = display +"("+ data[i] + ") ";
+            }else{
+                display = display + data[i] + " ";
+            }
         }
         return display;
     }
@@ -90,7 +94,7 @@ public class Sorter {
         Comparable tmp = (Comparable) i;
         Comparable dataJ = (Comparable) j;
         int compare = tmp.compareTo(dataJ);
-        System.out.printf("----->COMPARE : %s - %s = %d",tmp,dataJ,compare);
+        System.out.printf("----->COMPARE : %s compareTo %s = %d",tmp,dataJ,compare);
         //System.out.println("----->COMPARE tmp: " + i + " with j: " + j  + "  get  " + compare);
     }
 }
