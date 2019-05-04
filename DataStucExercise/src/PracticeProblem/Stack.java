@@ -1,20 +1,18 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Created By Safe_IT23
  */
 package PracticeProblem;
 
-import java.util.Comparator;
 import java.util.LinkedList;
-import java.util.NoSuchElementException;
 
 /**
- *
- * @author PROG
+ * @author jatawatsafe 
+ * Practice03 : Stack has method findMin() with O(1) **using two stack inside
+ * Level: Intermediate
  */
 public class Stack <E>{
     private LinkedList<E> data;
+    //keep min at the same time data
     private LinkedList<E> min;
     
     public Stack(){
@@ -28,12 +26,15 @@ public class Stack <E>{
     
     public void push(E e){
         data.push(e);
+        //push same data in min
         if(min.isEmpty()){
             min.push(e);
         }else{
+            //check if new one is min push this e
             if(isLessThan(e)){
                 min.push(e);
             }else{
+                //if new one is more than, must push the min again because 2 stack choose same number of elements 
                 min.push(min.peek());
             }
         }

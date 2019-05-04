@@ -1,15 +1,14 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Created By Safe_IT23
  */
 package PracticeProblem;
 
 import java.util.Comparator;
 
 /**
- *
- * @author PROG
+ * @author jatawatsafe 
+ * Practice04 : Patient in Hospital
+ * Level: Intermediate
  */
 public class Patient{
     private String name;
@@ -18,7 +17,7 @@ public class Patient{
     private int damage;
     public static PatientComparator freqDescending = new PatientComparator();
     private static class PatientComparator implements Comparator<Patient>{
-        //Descending order
+        //Descending order : More priority will out first
         @Override
         public int compare(Patient o1, Patient o2) {
         return o2.calculatePriority() - o1.calculatePriority();

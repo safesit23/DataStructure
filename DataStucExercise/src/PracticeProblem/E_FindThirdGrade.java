@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Created By Safe_IT23
  */
 package PracticeProblem;
 
@@ -10,8 +8,9 @@ import java.util.Set;
 import java.util.TreeSet;
 
 /**
- *
- * @author PROG
+ * @author jatawatsafe 
+ * Practice02 : Find The maximum Grade : 3rd Order
+ * Level: Easy
  */
 public class E_FindThirdGrade {
 
