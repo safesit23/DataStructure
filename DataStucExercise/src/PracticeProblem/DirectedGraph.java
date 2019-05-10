@@ -11,7 +11,7 @@ import java.util.StringJoiner;
  *
  * @author jatawatsafe 
  * Practice02 : Find Subgraph
- * Level: Hard
+ * Level: Hard (3 Hour)
  */
 
 public class DirectedGraph<V> {
